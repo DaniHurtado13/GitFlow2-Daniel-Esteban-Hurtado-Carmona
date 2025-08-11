@@ -1,20 +1,30 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  list-style: none;
 }
 
 .wrapper {
-  display: flex; 
+  display: flex;
   width: 100%;
   height: 100vh;
 }
 
 .container {
-  width: 50%;
+  position: relative;
+  width: 60%;
   height: 100%;
-  background-color: rgba(243, 244, 246, 1);
+  background-image: url("/img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: rgba(68, 61, 112, 0.8);
+  background-blend-mode: multiply;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-2 {
@@ -26,15 +36,14 @@
   align-items: center;
 }
 
-
-
 .form {
   background-color: #fff;
   display: block;
   padding: 1rem;
   max-width: 370px;
   border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .form-title {
@@ -46,16 +55,17 @@
 }
 
 .form-subtitle {
-    font-size: 0.9rem;
-    line-height: 1.25rem;
-    color: gray;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  color: gray;
 }
 
 .input-container {
   position: relative;
 }
 
-.input-container input, .form button {
+.input-container input,
+.form button {
   outline: none;
   border: 1px solid #e5e7eb;
   margin: 8px 0;
@@ -65,19 +75,18 @@
   background-color: #fff;
   padding: 0.60rem;
   padding-right: 3rem;
+  padding-left: 40px;
   font-size: 0.875rem;
   line-height: 1.25rem;
   width: 100%;
   border-radius: 0.5rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
 }
 
 .submit {
   display: block;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding: 0.75rem 1.25rem;
   background-color: #4F46E5;
   color: #ffffff;
   font-size: 0.875rem;
@@ -86,6 +95,7 @@
   width: 100%;
   border-radius: 0.5rem;
   text-transform: uppercase;
+  font-size: 12px;
 }
 
 .signup-link {
@@ -95,7 +105,8 @@
   text-align: center;
 }
 
-.signup-link a, .container-password a {
+.signup-link a,
+.container-password a {
   text-decoration: none;
 }
 
@@ -106,29 +117,25 @@
   margin-top: 1rem;
 }
 
-.submit {
-    font-size: 12px;
-}
-
 .container-password {
-    position: relative;
-    width: 100%;
-    font-size: 14px;
-    text-align: right;
-    margin: 0.80rem 0 0.80rem;
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  text-align: right;
+  margin: 0.80rem 0;
 }
 
 .container-info {
-    text-align: center;
-    margin-bottom: 1rem;
-    width: 300px;
-    position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+  width: 300px;
+  position: relative;
 }
 
 .container-info img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 .form-wrapper {
@@ -155,12 +162,8 @@
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none; 
+  pointer-events: none;
   font-size: 1rem;
-}
-
-.input-container input {
-  padding-left: 40px;
 }
 
 .dots {
@@ -168,8 +171,7 @@
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none; 
-  font-size: 1rem;
+  pointer-events: none;
   width: 1.65rem;
   height: 1.65rem;
   background-color: red;
@@ -185,7 +187,6 @@
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  font-size: 1rem;
   width: 1.65rem;
   height: 1.65rem;
   background-color: red;
@@ -202,4 +203,166 @@
   transform: translateY(-50%);
   pointer-events: none;
   font-size: 1rem;
+}
+
+.burbujas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.burbuja {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: subir 10s linear infinite;
+}
+
+.burbuja:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 6s; }
+.burbuja:nth-child(2) { width: 25px; height: 25px; left: 30%; animation-duration: 8s; }
+.burbuja:nth-child(3) { width: 50px; height: 50px; left: 50%; animation-duration: 10s; }
+.burbuja:nth-child(4) { width: 20px; height: 20px; left: 70%; animation-duration: 13s; }
+.burbuja:nth-child(5) { width: 35px; height: 35px; left: 90%; animation-duration: 11s; }
+.burbuja:nth-child(6) { width: 35px; height: 35px; left: 64%; animation-duration: 18s; }
+.burbuja:nth-child(7) { width: 35px; height: 35px; left: 20%; animation-duration: 11s; }
+
+@keyframes subir {
+  0%   { transform: translateY(0) scale(1); opacity: 0.5; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+}
+
+.title-logo {
+  color: rgba(246, 240, 255, 1);
+}
+
+.title-logo p {
+  font-size: 0.90rem;
+  margin-top: 0.20rem;
+}
+
+.title-logo .logo img {
+  width: 50px;
+  height: 40px;
+  border-radius: 20%;
+  box-shadow: 0 0 20px 5px rgba(129, 119, 175, 1);
+}
+
+.info {
+  color: rgba(246, 240, 255, 1);
+  margin-top: 1rem;
+}
+
+.info p {
+  margin-top: 1rem;
+}
+
+.info ul li {
+  margin-top: 1rem;
+}
+
+.metricas {
+  color: rgba(246, 240, 255, 1);
+  display: flex;
+  gap: 2rem;
+  font-size: 1.30rem;
+  margin-top: 2rem;
+}
+
+.metricas p {
+  font-weight: bold;
+}
+
+
+@media (max-width: 1200px) {
+  .container {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .title-logo,
+  .info,
+  .metricas {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .metricas {
+    flex-direction: row; 
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    min-height: 60vh;
+  }
+
+  .container-2 {
+    width: 100%;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .form {
+    max-width: 100%;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .container-info img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .form-wrapper {
+    padding: 1rem;
+  }
+
+  .metricas {
+    font-size: 1.1rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 1.1rem;
+  }
+
+  .form-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .input-container input {
+    font-size: 0.8rem;
+  }
+
+  .submit {
+    font-size: 0.75rem;
+    padding: 0.6rem;
+  }
+
+  .container-info .welcome-message {
+    font-size: 18px;
+  }
+
+  .metricas {
+    gap: 1rem;
+    font-size: 1rem;
+  }
 }
